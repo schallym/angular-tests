@@ -1,0 +1,24 @@
+<li [ngClass]="{
+        'list-group-item': true,
+        'list-group-item-success': loveIts > 0,
+        'list-group-item-danger': loveIts < 0
+    }">
+    <div>
+        <span class="pull-right text-muted">{{ createdAt | date: 'short'}}</span>
+        <h4>{{ title }}</h4>
+        <p>
+            {{ content }}
+        </p>
+        <button type="button" class="btn btn-success" (click)="updateLikeCount(1)">I like it :)</button>
+        <button type="button" class="btn btn-danger" (click)="updateLikeCount(-1)">I don't like it :(</button>
+        <a [ngClass]="{
+                'btn btn-sm': true,
+                'btn-primary': loveIts === 0,
+                'btn-success': loveIts > 0,
+                'btn-danger': loveIts < 0
+                }"
+        >
+            {{ loveIts }}
+        </a>
+    </div>
+</li>

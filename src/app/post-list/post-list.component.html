@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <ng-container *ngFor="let post of posts;">
+        <app-post-list-item [title]="post.title" [content]="post.content"></app-post-list-item>
+    </ng-container>
+</ul>
